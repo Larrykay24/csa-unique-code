@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Code | Cyber Snipper Academy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .code-box {
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Cyber Snipper Academy Test <br>Generate your unique code now</h5>
+                        <div class="form-group code-box">
+                            <input type="text" id="randomCode" class="form-control" readonly>
+                        </div>
+                        <button id="generateButton" class="btn btn-primary btn-block" onclick="generateCode()">Generate Code</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Cyber Snipper © 2024</p>
+    </footer>
+
+    <script>
+        function generateCode() {
+            // Generate a 6-digit random number
+            var code = Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('randomCode').value = code;
+            document.getElementById('generateButton').disabled = true;
+            document.getElementById('generateButton').innerText = "Code Generated";
+        }
+    </script>
+
+</body>
+</html>
